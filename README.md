@@ -2,9 +2,14 @@
 Sistema CRUD para la gestión académica, ya sea de un instituto o universidad, dicho sistema es muy básico y sirve unicamente para ver el funcionamiento del patrón MVC, construido con Flask usa PostgreSQL como base de datos.
 
 # Para ejecutar
-El proyecto fue concebido en su totalidad usando Python 3.11.0 y PostgreSQL 17.7, en el archivo `db_academico.sql`
+El proyecto fue concebido en su totalidad usando Python 3.11.0 y PostgreSQL 17.7, en el archivo `db_academico.sql` esta todo el código para copiarlo directo en el pgAdmin 4, de cambiar el nombre de la base de datos, asegurese de que en el archivo `config.py` coincida con los nombres que coloque.
+Asimismo, es necesario contar con las librerias necesarias para ejecutarlo (en local o en un host, esto mediante VS Code).
+```text
+py -3.11 -m pip install Flask
+py -3.11 -m pip install psycopg2
+```
 
-## 📁 Estructura del Proyecto
+# Estructura del Proyecto
 
 ```text
 sitio_web_academico/
@@ -41,3 +46,4 @@ sitio_web_academico/
 │   └── index.html              # Página de inicio principal (Home)
 │
 └── README.md                   # Documentación general del proyecto
+```
