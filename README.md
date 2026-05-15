@@ -9,6 +9,10 @@ py -3.11 -m pip install Flask
 py -3.11 -m pip install psycopg2
 ```
 
+# Estructura del sistema y funcionalidades
+
+El sistema cuenta con elementos visuales de Bootstrap 5, tanto en los formularios para añadir datos, como en la estructura del mismo código HTML, adicionalemente, la base de datos cuenta con la capacidad de generación automática de claves primarias, haciendo que el sistema unicamente solicite la información necesaria, también cuenta con la capacidad de generación de columnas (como la edad la cual se calcula automáticamente).
+
 # Estructura del Proyecto
 
 ```text
@@ -29,8 +33,7 @@ sitio_web_academico/
 │   ├── css/
 │   │   └── estilos.css         # Hoja de estilos personalizados (Vacía)
 │   └── js/
-│       ├── scripts.js          # JavaScript: Configuración de búsquedas avanzadas (Select2)
-│       └── main.js             # JavaScript: Navegación, cookies, animaciones y formularios
+│       ├── scripts.js          # JavaScript: Configuración de búsquedas avanzadas (Select)
 │
 ├── templates/                  # Vistas HTML organizadas por módulos (Views)
 │   ├── docente/
