@@ -4,12 +4,14 @@ Sistema CRUD para la gestión académica, ya sea de un instituto o universidad, 
 # Para ejecutar
 El proyecto fue concebido en su totalidad usando Python 3.11.0 y PostgreSQL 17.7, en el archivo `db_academico.sql`
 
-# Estructura del proyecto
+## 📁 Estructura del Proyecto
+
+```text
 sitio_web_academico/
 │
 ├── run.py                      # Archivo de ejecución principal (Controller)
 ├── config.py                   # Conexión con la base de datos (PostgreSQL)
-├── db_academico.sql            # Código completo para la creación de la base de datos (Tablas, funciones y triggers)
+├── db_academico.sql            # Código SQL para la creación de la base de datos (Tablas, funciones y triggers)
 │
 ├── models/                     # Modelos por cada tabla (Lógica de comunicación con la BD)
 │   ├── docente_model.py
