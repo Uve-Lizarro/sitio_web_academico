@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </head>
+    <body>
+        <form action="/inscrito/modificar/{{ inscrito[0] }}/{{ inscrito[1] }}/{{ inscrito[2] }}" method="POST">
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold text-light">Paralelo</label>
+                    <select class="form-select select-paralelo-lineas" name="atri_1_M_I" required>
+                        <option value="" disabled selected>Seleccione un paralelo...</option>
+                        {% for p in paralelos %}
+                            <option value="{{ p[0] }}" {% if p[0] == inscrito[1] %}selected{% endif %}>
+                                {{ p[1] }} - {{ p[2] }} - {{ p[4] }} | Docente: {{ p[3] }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold text-light">Estudiante</label>
+                    <select class="form-select select-buscador" name="atri_2_M_I" required>
+                        <option value="" disabled selected>Seleccione un estudiante...</option>
+                        {% for e in estudiantes %}
+                            <option value="{{ e[0] }}" {% if e[0] == inscrito[2] %}selected{% endif %}>
+                                {{ e[1] }} {{ e[2] }} — CI: {{ e[3] }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold text-light">Nota total</label>
+                    <div class="input-group">
+                        <input type="number" step="any" min="0" max="100" class="form-control text-center" 
+                            name="atri_3_M_I" value="{{ inscrito[3] }}">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold text-light">Estado</label>
+                    <input type="text" class="form-control text-center" value="{{ inscrito[4] }}" readonly>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="/" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </div>
+        </form>
+
+    </body>
+</html>
