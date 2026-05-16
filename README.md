@@ -1,5 +1,5 @@
 # Website_CRUD_gestion_academica
-Sistema CRUD para la gestión académica, ya sea de un instituto o universidad, dicho sistema es muy básico y sirve unicamente para ver el funcionamiento del patrón MVC, construido con Flask usa PostgreSQL como base de datos.
+Sistema CRUD para la gestión académica, ya sea de un instituto o universidad, dicho sistema es muy básico y sirve unicamente para ver el funcionamiento del patrón MVC, construido con Flask, y usa PostgreSQL como base de datos.
 
 # Para ejecutar
 El proyecto fue concebido en su totalidad usando Python 3.11.0 y PostgreSQL 17.7, en el archivo `db_academico.sql` esta todo el código para copiarlo directo en el pgAdmin 4, de cambiar el nombre de la base de datos, asegurese de que en el archivo `config.py` coincida con los nombres que coloque.
